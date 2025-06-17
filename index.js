@@ -1,4 +1,5 @@
-/* Selektujemo celu ul listu i dodeljujemo joj eventListener, unutar njega postavljamo if stejtment
+document.addEventListener("DOMContentLoaded", () =>{
+   /* Selektujemo celu ul listu i dodeljujemo joj eventListener, unutar njega postavljamo if stejtment
 koji proverava da li je klik unutar ul taga bio klik na element sa klasom 'delete'. Ako jeste onda
 brisemo roditeljski - li element  tog elementa na koji smo kliknuli. Na ovaj nacin postizemo brisanje 
 jednog elementa li liste ul na cije delete dugme smo kliknuli. */
@@ -97,6 +98,9 @@ tabs.addEventListener("click", event => {
       })
    }
 })
+})
+
+
 
 
 
