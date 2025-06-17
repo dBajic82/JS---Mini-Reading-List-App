@@ -19,10 +19,10 @@ const addForm = document.forms["add-book"];
 
  addForm.addEventListener("submit", event=>{
    event.preventDefault();
-   let input = addForm.querySelector("input");
+   let input = addForm.querySelectorAll("input")[1];
    if(input.value !== ''){
 
-         const li = document.createElement("li");
+/*          const li = document.createElement("li");
          const name = document.createElement("span");
          const delBtn = document.createElement("span");
 
@@ -34,14 +34,14 @@ const addForm = document.forms["add-book"];
          li.appendChild(delBtn);
 
          name.classList.add('name');
-         delBtn.classList.add('delete');
+         delBtn.classList.add('delete'); */
 
          //Kraci nacin da se postigne isti efekat:
 
-         /* let newLi = document.createElement("li");
+         let newLi = document.createElement("li");
          newLi.innerHTML = `<span class="name">${input.value}</span>
                            <span class="delete">delete</span>`;
-         document.querySelector("ul").append(newLi); */
+         document.querySelector("ul").append(newLi);
    }
 
    input.value = "";     
@@ -78,10 +78,25 @@ searchBar.addEventListener("keyup", event => {
          book.parentElement.style.display = "block";
       }
    })
-
-
 })
 
+// Tabed content:
+
+const tabs = document.querySelector(".tabs")
+const panels = document.querySelectorAll(".panel")
+
+tabs.addEventListener("click", event => {
+   if(event.target.tagName == "LI"){
+      const targetPanel = document.querySelector(event.target.dataset.target)
+      panels.forEach(panel => {
+         if (panel == targetPanel){
+            panel.classList.add('active')
+         } else{
+            panel.classList.remove('active')
+         }
+      })
+   }
+})
 
 
 
